@@ -338,6 +338,16 @@ export interface InvitationCreatedEventResponse extends EventResponseBase {
   data: InvitationEventResponse;
 }
 
+export interface InvitationResentEvent extends EventBase {
+  event: 'invitation.resent';
+  data: InvitationEvent;
+}
+
+export interface InvitationResentEventResponse extends EventResponseBase {
+  event: 'invitation.resent';
+  data: InvitationEventResponse;
+}
+
 export interface MagicAuthCreatedEvent extends EventBase {
   event: 'magic_auth.created';
   data: MagicAuthEvent;
@@ -573,6 +583,7 @@ export type Event =
   | DsyncUserDeletedEvent
   | EmailVerificationCreatedEvent
   | InvitationCreatedEvent
+  | InvitationResentEvent
   | MagicAuthCreatedEvent
   | PasswordResetCreatedEvent
   | UserCreatedEvent
@@ -620,6 +631,7 @@ export type EventResponse =
   | DsyncUserDeletedEventResponse
   | EmailVerificationCreatedEventResponse
   | InvitationCreatedEventResponse
+  | InvitationResentEventResponse
   | MagicAuthCreatedEventResponse
   | PasswordResetCreatedEventResponse
   | UserCreatedEventResponse
